@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_374213bea86044e98e2b4366e558d958 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_374213bea86044e98e2b4366e558d958" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_374213bea86044e98e2b4366e558d958 = L.map(
+                "map_374213bea86044e98e2b4366e558d958",
+                {
+                    center: [34.0259, -118.2848],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 15,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_040d3aeb185b72ed40265e7c95bbb43f = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_374213bea86044e98e2b4366e558d958);
+        
+    
+            var marker_1596a277ecd456310e9c9584af7f63cd = L.marker(
+                [34.0226, -118.284],
+                {}
+            ).addTo(map_374213bea86044e98e2b4366e558d958);
+        
+    
+            var icon_f21a881bbc9a9c0f049a88edaec3d151 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_1596a277ecd456310e9c9584af7f63cd.setIcon(icon_f21a881bbc9a9c0f049a88edaec3d151);
+        
+    
+        var popup_cb3728537f4cb400fc0838ef2270c7ea = L.popup({"maxWidth": "100%"});
+
+        
+            var html_03a9e0fd62df6eea6ebc885501cdf3af = $(`<div id="html_03a9e0fd62df6eea6ebc885501cdf3af" style="width: 100.0%; height: 100.0%;"><strong>Ministry of Coffee</strong><br>844 W 32nd St, Los Angeles, CA 90007<br><em>Countless study sessions here. Spent all day here during finals week last semester.  </em></div>`)[0];
+            popup_cb3728537f4cb400fc0838ef2270c7ea.setContent(html_03a9e0fd62df6eea6ebc885501cdf3af);
+        
+
+        marker_1596a277ecd456310e9c9584af7f63cd.bindPopup(popup_cb3728537f4cb400fc0838ef2270c7ea)
+        ;
+
+        
+    
+    
+            var marker_18c0a0693b7474833dbeeaa0f4029de6 = L.marker(
+                [34.0255, -118.285],
+                {}
+            ).addTo(map_374213bea86044e98e2b4366e558d958);
+        
+    
+            var icon_c6aa3fdf0ebe631d7038b87d24fa0037 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_18c0a0693b7474833dbeeaa0f4029de6.setIcon(icon_c6aa3fdf0ebe631d7038b87d24fa0037);
+        
+    
+        var popup_3a0aa6f563aad2da71e95e55cd003e9c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_6a129002e21f0991f86bebd8b819e451 = $(`<div id="html_6a129002e21f0991f86bebd8b819e451" style="width: 100.0%; height: 100.0%;"><strong>Drip Daddy</strong><br>Village Crosswalk, No address. <br><em>My favorite place to grab a coffee on the way to class. Alex, the owner, gives great recommendations. </em></div>`)[0];
+            popup_3a0aa6f563aad2da71e95e55cd003e9c.setContent(html_6a129002e21f0991f86bebd8b819e451);
+        
+
+        marker_18c0a0693b7474833dbeeaa0f4029de6.bindPopup(popup_3a0aa6f563aad2da71e95e55cd003e9c)
+        ;
+
+        
+    
+    
+            var marker_3db4f577d6f3f4e14c9734a3798f616c = L.marker(
+                [34.0289, -118.2789],
+                {}
+            ).addTo(map_374213bea86044e98e2b4366e558d958);
+        
+    
+            var icon_7e915e793e5aae35140a48703a99eeb2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_3db4f577d6f3f4e14c9734a3798f616c.setIcon(icon_7e915e793e5aae35140a48703a99eeb2);
+        
+    
+        var popup_82eeb91b8a2488c9c56195536e9cbf50 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_47484c4673eea01dab212672f7f4bed4 = $(`<div id="html_47484c4673eea01dab212672f7f4bed4" style="width: 100.0%; height: 100.0%;"><strong>Alpha Phi</strong><br>643 W 28th St, Los Angeles, CA 90007<br><em>Where I go for lunch and dinner most weekdays. I can always count on seeing Lulu or Ella Jane at a meal. Although the food is good, it is the shared laughter over meals with them that truly reinforces my USC community. </em></div>`)[0];
+            popup_82eeb91b8a2488c9c56195536e9cbf50.setContent(html_47484c4673eea01dab212672f7f4bed4);
+        
+
+        marker_3db4f577d6f3f4e14c9734a3798f616c.bindPopup(popup_82eeb91b8a2488c9c56195536e9cbf50)
+        ;
+
+        
+    
+    
+            var marker_d99da656de6dc479826b10efd2e48c15 = L.marker(
+                [34.0312, -118.2805],
+                {}
+            ).addTo(map_374213bea86044e98e2b4366e558d958);
+        
+    
+            var icon_b1ecc401401c6fefb76946405fe045d1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_d99da656de6dc479826b10efd2e48c15.setIcon(icon_b1ecc401401c6fefb76946405fe045d1);
+        
+    
+        var popup_0f9a019056c1d7ecad77c960cd3947fe = L.popup({"maxWidth": "100%"});
+
+        
+            var html_1794b637013b854128ba9c36de45d7d5 = $(`<div id="html_1794b637013b854128ba9c36de45d7d5" style="width: 100.0%; height: 100.0%;"><strong>Bacari W Adams</strong><br>2308 S Union Ave, Los Angeles, CA 90007<br><em>My 19th birthday dinner, where I took my parents when they moved me in, and where I ate with Becs' parents after Red Dress Gala. So many great memories made over dinner here. </em></div>`)[0];
+            popup_0f9a019056c1d7ecad77c960cd3947fe.setContent(html_1794b637013b854128ba9c36de45d7d5);
+        
+
+        marker_d99da656de6dc479826b10efd2e48c15.bindPopup(popup_0f9a019056c1d7ecad77c960cd3947fe)
+        ;
+
+        
+    
+    
+            var marker_a0dd6d45836dfe0b057ee9028f35fd87 = L.marker(
+                [34.0205, -118.2842],
+                {}
+            ).addTo(map_374213bea86044e98e2b4366e558d958);
+        
+    
+            var icon_8b2a61cdc2ecf1fdf7a65c1a4d07efae = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_a0dd6d45836dfe0b057ee9028f35fd87.setIcon(icon_8b2a61cdc2ecf1fdf7a65c1a4d07efae);
+        
+    
+        var popup_1f707ab10b3e88f8a285dc62b9f6f3d4 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_d5ee683177d2a1ea249b3d175423911b = $(`<div id="html_d5ee683177d2a1ea249b3d175423911b" style="width: 100.0%; height: 100.0%;"><strong>Everybody's Kitchen</strong><br>642 W 34th St, Los Angeles, CA 90007<br><em>The dining hall I went to every day of my freshman year. Although the food was terrible, I made countless memories here. Whether it was late-night soft-serve runs or sunday brunch. </em></div>`)[0];
+            popup_1f707ab10b3e88f8a285dc62b9f6f3d4.setContent(html_d5ee683177d2a1ea249b3d175423911b);
+        
+
+        marker_a0dd6d45836dfe0b057ee9028f35fd87.bindPopup(popup_1f707ab10b3e88f8a285dc62b9f6f3d4)
+        ;
+
+        
+    
+    
+            var marker_cf57dfcd651a5bb35401c3b819dae7f9 = L.marker(
+                [34.027, -118.2912],
+                {}
+            ).addTo(map_374213bea86044e98e2b4366e558d958);
+        
+    
+            var icon_866e7a66f31c718e2fed1d8253bc75e9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_cf57dfcd651a5bb35401c3b819dae7f9.setIcon(icon_866e7a66f31c718e2fed1d8253bc75e9);
+        
+    
+        var popup_a11f4ff604c16b626cda3d4adfb38ee8 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_eed79e5a73970035d3be69343797ca81 = $(`<div id="html_eed79e5a73970035d3be69343797ca81" style="width: 100.0%; height: 100.0%;"><strong>Manas Indian Cuisine</strong><br>2823 S Vermont Ave, Los Angeles, CA 90007<br><em>Becs and I have a tradition of always getting Manas when one of us has a bad day. When we were freshmen, we had to eat it on the floor, laying out a picnic blanket, as we didn't have tables in our dorm room. </em></div>`)[0];
+            popup_a11f4ff604c16b626cda3d4adfb38ee8.setContent(html_eed79e5a73970035d3be69343797ca81);
+        
+
+        marker_cf57dfcd651a5bb35401c3b819dae7f9.bindPopup(popup_a11f4ff604c16b626cda3d4adfb38ee8)
+        ;
+
+        
+    
+    
+            var marker_f013d283cef9ca68221f5b7d9fa4d6a4 = L.marker(
+                [34.0283, -118.2737],
+                {}
+            ).addTo(map_374213bea86044e98e2b4366e558d958);
+        
+    
+            var icon_5f97b1a596dbc4edc44f14ec02bba7da = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_f013d283cef9ca68221f5b7d9fa4d6a4.setIcon(icon_5f97b1a596dbc4edc44f14ec02bba7da);
+        
+    
+        var popup_f0aceef948609215d65220f06e0b6f99 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_1bed03a858248b2fbf5d8eae6d3de5ef = $(`<div id="html_1bed03a858248b2fbf5d8eae6d3de5ef" style="width: 100.0%; height: 100.0%;"><strong>Starbucks on 28th</strong><br>2735 S Figueroa St, Los Angeles, CA 90007<br><em>Where Rachel and I go every Saturday and Sunday morning, exhausted, to revive ourselves. </em></div>`)[0];
+            popup_f0aceef948609215d65220f06e0b6f99.setContent(html_1bed03a858248b2fbf5d8eae6d3de5ef);
+        
+
+        marker_f013d283cef9ca68221f5b7d9fa4d6a4.bindPopup(popup_f0aceef948609215d65220f06e0b6f99)
+        ;
+
+        
+    
+    
+            var marker_716ff1a5e7c19642b0eaf7e27f7d3f66 = L.marker(
+                [34.0175, -118.2732],
+                {}
+            ).addTo(map_374213bea86044e98e2b4366e558d958);
+        
+    
+            var icon_84cd4017fab6d5749a621725eca0776b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_716ff1a5e7c19642b0eaf7e27f7d3f66.setIcon(icon_84cd4017fab6d5749a621725eca0776b);
+        
+    
+        var popup_74720331d9efa3ed63b806545fd464b6 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_bac240ff0d3a5aee8cdaaf22f25f571d = $(`<div id="html_bac240ff0d3a5aee8cdaaf22f25f571d" style="width: 100.0%; height: 100.0%;"><strong>Yogurtland </strong><br>3335 S Figueroa St Unit K, Los Angeles, CA 90007<br><em>Where I said goodbye to Grace before she went abroad, somewhere all of my friends know we can go when someone has had a bad day. </em></div>`)[0];
+            popup_74720331d9efa3ed63b806545fd464b6.setContent(html_bac240ff0d3a5aee8cdaaf22f25f571d);
+        
+
+        marker_716ff1a5e7c19642b0eaf7e27f7d3f66.bindPopup(popup_74720331d9efa3ed63b806545fd464b6)
+        ;
+
+        
+    
+    
+            var marker_00a02bc5102ba4dd5acb2b1c110a654a = L.marker(
+                [34.0206, -118.2854],
+                {}
+            ).addTo(map_374213bea86044e98e2b4366e558d958);
+        
+    
+            var icon_114ff740ac83625a56a314433c938171 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_00a02bc5102ba4dd5acb2b1c110a654a.setIcon(icon_114ff740ac83625a56a314433c938171);
+        
+    
+        var popup_e6d4838ff0fdaad33b7a7f629d27f856 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_e22329996f161a7144533bd51533d676 = $(`<div id="html_e22329996f161a7144533bd51533d676" style="width: 100.0%; height: 100.0%;"><strong>Literatea</strong><br>3550 Trousdale Pkwy, Los Angeles, CA 90089<br><em>I came here for coffee twice a week last year, in the quick break between classes. Quickly, it also became one of my favorite study sports. I got to know the Baristas well, and this community meant a lot to me</em></div>`)[0];
+            popup_e6d4838ff0fdaad33b7a7f629d27f856.setContent(html_e22329996f161a7144533bd51533d676);
+        
+
+        marker_00a02bc5102ba4dd5acb2b1c110a654a.bindPopup(popup_e6d4838ff0fdaad33b7a7f629d27f856)
+        ;
+
+        
+    
+    
+            var marker_e4798d81f146ffcd4dcc43d8d61c72b0 = L.marker(
+                [34.0231, -118.2859],
+                {}
+            ).addTo(map_374213bea86044e98e2b4366e558d958);
+        
+    
+            var icon_8d4473c7be1bee49efef59bed051ed7b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_e4798d81f146ffcd4dcc43d8d61c72b0.setIcon(icon_8d4473c7be1bee49efef59bed051ed7b);
+        
+    
+        var popup_9a6d7d06fa746940aae61a3c3ba269d8 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_996c79232034f53c0b5ca1c6ee281ffc = $(`<div id="html_996c79232034f53c0b5ca1c6ee281ffc" style="width: 100.0%; height: 100.0%;"><strong>Rock and Reilly's </strong><br>3201 S Hoover St, Los Angeles, CA 90089<br><em>Superbowl Sunday! Spent about 8 hours here, camping out to make sure I got a table. This place has seen me at my best and worst. </em></div>`)[0];
+            popup_9a6d7d06fa746940aae61a3c3ba269d8.setContent(html_996c79232034f53c0b5ca1c6ee281ffc);
+        
+
+        marker_e4798d81f146ffcd4dcc43d8d61c72b0.bindPopup(popup_9a6d7d06fa746940aae61a3c3ba269d8)
+        ;
+
+        
+    
+</script>
+</html>
