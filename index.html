@@ -8,6 +8,13 @@
   <style>
     #map { height: 100vh; }
     .leaflet-popup-content { font-size: 14px; }
+    .heart-icon {
+      background-image: url('https://cdn-icons-png.flaticon.com/512/833/833472.png');
+      background-size: cover;
+      width: 32px;
+      height: 32px;
+      display: block;
+    }
   </style>
 </head>
 <body>
@@ -16,9 +23,16 @@
   <script>
     var map = L.map('map').setView([34.0259, -118.2854], 15);
 
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
     }).addTo(map);
+
+    var heartIcon = L.icon({
+      iconUrl: 'https://cdn-icons-png.flaticon.com/512/833/833472.png',
+      iconSize: [32, 32],
+      iconAnchor: [16, 32],
+      popupAnchor: [0, -32]
+    });
 
     var locations = [
       {
