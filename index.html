@@ -1,83 +1,110 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>USC through my eyes and stomach</title>
+    <title>USC through my eyes and stomach</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Leaflet CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
-  <!-- Awesome Markers CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
-
-  <!-- Optional Bootstrap -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
-
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      width: 100%;
-    }
-    #map {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      right: 0;
-      left: 0;
-    }
-    .map-title {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      z-index: 1000;
-      background-color: rgba(255, 255, 255, 0.85);
-      padding: 10px 15px;
-      border-radius: 8px;
-      font-weight: bold;
-      font-size: 18px;
-      font-family: 'Helvetica Neue', sans-serif;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    }
-  </style>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+    <style>
+        body {{ margin: 0; padding: 0; }}
+        #map {{ height: 100vh; width: 100vw; }}
+        #popup-info {{
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            z-index: 1000;
+            background: white;
+            padding: 12px;
+            border-radius: 8px;
+            max-width: 300px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            font-family: Arial, sans-serif;
+        }}
+        h2 {{
+            font-size: 1.2em;
+            margin: 0 0 5px;
+        }}
+        img {{
+            max-width: 100%;
+            border-radius: 4px;
+        }}
+    </style>
 </head>
 <body>
+    <div id="map"></div>
+    <div id="popup-info"><strong>Click on a point to see more info</strong></div>
 
-  <!-- Title -->
-  <div class="map-title">USC through my eyes and stomach</div>
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script>
+        var map = L.map('map').setView([34.025, -118.285], 15);
 
-  <!-- Map Container -->
-  <div id="map"></div>
+        L.tileLayer('https://{{s}}.tile.openstreetmap.org/{{z}}/{{x}}/{{y}}.png', {{
+            maxZoom: 19,
+        }}).addTo(map);
 
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
-  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+        var popupInfo = document.getElementById('popup-info');
 
-  <!-- Insert your Leaflet JS map code here -->
-  <!-- ↓↓↓ Paste your existing Leaflet JavaScript code here ↓↓↓ -->
-  <!-- Example: -->
-  <script>
-    var map = L.map("map").setView([34.0259, -118.2848], 15);
-    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      attribution: "Map data © <a href='https://openstreetmap.org'>OpenStreetMap</a> contributors"
-    }).addTo(map);
+        function showInfo(name, address, memory, imageUrl) {{
+            popupInfo.innerHTML = `
+                <h2>${{name}}</h2>
+                <p><strong>Address:</strong> ${{address}}</p>
+                <p><strong>Memory:</strong> ${{memory}}</p>
+                <img src="${{imageUrl}}" alt="${{name}}" />
+            `;
+        }}
 
-    // Sample marker – replace or add your own
-    var marker = L.marker([34.0226, -118.284], {
-      icon: L.AwesomeMarkers.icon({
-        icon: 'info-sign',
-        markerColor: 'blue',
-        prefix: 'glyphicon'
-      })
-    }).addTo(map);
-
-    marker.bindPopup("<strong>Ministry of Coffee</strong><br>844 W 32nd St, Los Angeles, CA 90007<br><em>Countless study sessions here.</em>");
-  </script>
+        // Marker data
+        L.marker([34.025022, -118.283156])
+            .addTo(map)
+            .on('click', function () {{
+                showInfo("Ministry of Coffee", "844 W 32nd St, Los Angeles, CA 90007", `Countless study sessions here. Spent all day here during finals week.`, "https://images.squarespace-cdn.com/content/v1/5f45e76993895d07b9b1a2f3/1622930577276-YD1KYOMMQTBZRYD8EJSK/Ministry-2.jpg");
+            }});
+        L.marker([34.023912, -118.283696])
+            .addTo(map)
+            .on('click', function () {{
+                showInfo("Drip Daddy", "Village Crosswalk, No address.", `My favorite place to grab a coffee on the way to class.`, "https://images.squarespace-cdn.com/content/v1/5f45e76993895d07b9b1a2f3/1622930423857-04M7LRM36LLV7JJ28R7M/DripDaddy1.jpg");
+            }});
+        L.marker([34.026869, -118.278828])
+            .addTo(map)
+            .on('click', function () {{
+                showInfo("Alpha Phi", "643 W 28th St, Los Angeles, CA 90007", `Where I go for lunch and dinner most weekdays.`, "https://static.wixstatic.com/media/2010a3_81730bdad28e4c4c8dd3e0c43a28529f~mv2.jpg/v1/fill/w_640,h_427,al_c,q_80,usm_0.66_1.00_0.01/2010a3_81730bdad28e4c4c8dd3e0c43a28529f~mv2.jpg");
+            }});
+        L.marker([34.0333, -118.2833])
+            .addTo(map)
+            .on('click', function () {{
+                showInfo("Bacari W Adams", "2308 S Union Ave, Los Angeles, CA 90007", `My 19th birthday dinner, where I took my parents during their visit.`, "https://s3-media0.fl.yelpcdn.com/bphoto/ZfI0VxNc2kVnSLCXD9J4Fw/o.jpg");
+            }});
+        L.marker([34.02114, -118.282328])
+            .addTo(map)
+            .on('click', function () {{
+                showInfo("Everybody's Kitchen", "642 W 34th St, Los Angeles, CA 90007", `The dining hall I went to every day of my freshman year.`, "https://hospitality.usc.edu/wp-content/uploads/2022/07/EVKDiningHall.jpg");
+            }});
+        L.marker([34.030764, -118.291643])
+            .addTo(map)
+            .on('click', function () {{
+                showInfo("Manas Indian Cuisine", "2823 S Vermont Ave, Los Angeles, CA 90007", `My favorite spot to eat when I crave Indian food.`, "https://fastly.4sqi.net/img/general/600x600/1004017_x7LQ_V-W2sklAtKh3IQAcXVGMeAe8-Lyq4MIKMoV6kg.jpg");
+            }});
+        L.marker([34.027113, -118.278145])
+            .addTo(map)
+            .on('click', function () {{
+                showInfo("Starbucks on 28th", "2735 S Figueroa St, Los Angeles, CA 90007", `A spot where I’ve had dozens of late-night study sessions.`, "https://content-prod-live.cert.starbucks.com/binary/v2/asset/137-68401.jpg");
+            }});
+        L.marker([34.020763, -118.284239])
+            .addTo(map)
+            .on('click', function () {{
+                showInfo("Yogurtland", "3335 S Figueroa St Unit K, Los Angeles, CA 90007", `Where I go for dessert after stressful exams.`, "https://s3-media0.fl.yelpcdn.com/bphoto/qK9n_mEka94CItAcVE7nQg/o.jpg");
+            }});
+        L.marker([34.020899, -118.285527])
+            .addTo(map)
+            .on('click', function () {{
+                showInfo("Literatea", "3550 Trousdale Pkwy, Los Angeles, CA 90089", `My favorite tea and pastry spot tucked inside the library.`, "https://dailytrojan.com/wp-content/uploads/2016/01/IMG_2969.jpg");
+            }});
+        L.marker([34.025147, -118.284941])
+            .addTo(map)
+            .on('click', function () {{
+                showInfo("Rock and Reilly's", "3201 S Hoover St, Los Angeles, CA 90089", `Where we celebrated finishing finals with friends.`, "https://s3-media0.fl.yelpcdn.com/bphoto/iTwIHa7W0FgsfUu_f9AJwQ/o.jpg");
+            }});
+    </script>
 </body>
 </html>
