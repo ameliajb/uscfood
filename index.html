@@ -45,10 +45,13 @@
     }).addTo(map);
 
     var heartIcon = L.icon({
-      iconUrl: 'https://cdn-icons-png.flaticon.com/128/833/833472.png',
+      iconUrl: 'https://cdn-icons-png.flaticon.com/512/833/833472.png',
       iconSize: [32, 32],
       iconAnchor: [16, 32],
-      popupAnchor: [0, -32]
+      popupAnchor: [0, -32],
+      shadowUrl: null,
+      shadowSize: null,
+      shadowAnchor: null
     });
     
     var locations = [
@@ -125,7 +128,7 @@
     ];
 
     locations.forEach(function(loc) {
-      L.marker([loc.lat, loc.lng]).addTo(map)
+      L.marker([loc.lat, loc.lng], { icon: heartIcon }).addTo(map)
         .bindPopup(`<strong>${loc.name}</strong><br>${loc.address}<br><em>${loc.memory}</em>`);
     });
   </script>
