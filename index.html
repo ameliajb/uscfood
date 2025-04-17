@@ -1,110 +1,102 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>USC through my eyes and stomach</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
-    <style>
-        body {{ margin: 0; padding: 0; }}
-        #map {{ height: 100vh; width: 100vw; }}
-        #popup-info {{
-            position: absolute;
-            bottom: 10px;
-            left: 10px;
-            z-index: 1000;
-            background: white;
-            padding: 12px;
-            border-radius: 8px;
-            max-width: 300px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.2);
-            font-family: Arial, sans-serif;
-        }}
-        h2 {{
-            font-size: 1.2em;
-            margin: 0 0 5px;
-        }}
-        img {{
-            max-width: 100%;
-            border-radius: 4px;
-        }}
-    </style>
+  <title>USC through my eyes and stomach.</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <style>
+    #map { height: 100vh; }
+    .leaflet-popup-content { font-size: 14px; }
+  </style>
 </head>
 <body>
-    <div id="map"></div>
-    <div id="popup-info"><strong>Click on a point to see more info</strong></div>
+  <div id="map"></div>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    var map = L.map('map').setView([34.0259, -118.2854], 15);
 
-    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
-    <script>
-        var map = L.map('map').setView([34.025, -118.285], 15);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: 'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors'
+    }).addTo(map);
 
-        L.tileLayer('https://{{s}}.tile.openstreetmap.org/{{z}}/{{x}}/{{y}}.png', {{
-            maxZoom: 19,
-        }}).addTo(map);
+    var locations = [
+      {
+        name: "Ministry of Coffee",
+        address: "844 W 32nd St, Los Angeles, CA 90007",
+        memory: "Classic study spot, was here till 1am during finals week",
+        lat: 34.023486,
+        lng: -118.282305
+      },
+      {
+        name: "Drip Daddy",
+        address: "Village Crosswalk (no listed address)",
+        memory: "Where I first discovered Korean corn dogs with friends",
+        lat: 34.025131,
+        lng: -118.285706
+      },
+      {
+        name: "Alpha Phi",
+        address: "643 W 28th St, Los Angeles, CA 90007",
+        memory: "The place I now call home—memories of bid night and sisterhood",
+        lat: 34.028723,
+        lng: -118.278629
+      },
+      {
+        name: "Bacari W Adams",
+        address: "2308 S Union Ave, Los Angeles, CA 90007",
+        memory: "Date night and tapas with my best friend visiting from back home",
+        lat: 34.029622,
+        lng: -118.284737
+      },
+      {
+        name: "Everybody's Kitchen",
+        address: "642 W 34th St, Los Angeles, CA 90007",
+        memory: "Where I eat most of my meals and laugh with friends",
+        lat: 34.021946,
+        lng: -118.282669
+      },
+      {
+        name: "Manas Indian Cuisine",
+        address: "2823 S Vermont Ave, Los Angeles, CA 90007",
+        memory: "Post-class comfort food when I miss home",
+        lat: 34.028349,
+        lng: -118.291227
+      },
+      {
+        name: "Starbucks on 28th",
+        address: "2735 S Figueroa St, Los Angeles, CA 90007",
+        memory: "Iced matcha and journaling afternoons",
+        lat: 34.028721,
+        lng: -118.277568
+      },
+      {
+        name: "Yogurtland",
+        address: "3335 S Figueroa St Unit K, Los Angeles, CA 90007",
+        memory: "Sweet treat after midterms",
+        lat: 34.018401,
+        lng: -118.273808
+      },
+      {
+        name: "Literatea",
+        address: "3550 Trousdale Pkwy, Los Angeles, CA 90089",
+        memory: "Matcha lattes and long study days at Doheny",
+        lat: 34.021397,
+        lng: -118.283943
+      },
+      {
+        name: "Rock and Reilly's",
+        address: "3201 S Hoover St, Los Angeles, CA 90089",
+        memory: "Friday night burgers with roommates",
+        lat: 34.024412,
+        lng: -118.285241
+      }
+    ];
 
-        var popupInfo = document.getElementById('popup-info');
-
-        function showInfo(name, address, memory, imageUrl) {{
-            popupInfo.innerHTML = `
-                <h2>${{name}}</h2>
-                <p><strong>Address:</strong> ${{address}}</p>
-                <p><strong>Memory:</strong> ${{memory}}</p>
-                <img src="${{imageUrl}}" alt="${{name}}" />
-            `;
-        }}
-
-        // Marker data
-        L.marker([34.025022, -118.283156])
-            .addTo(map)
-            .on('click', function () {{
-                showInfo("Ministry of Coffee", "844 W 32nd St, Los Angeles, CA 90007", `Countless study sessions here. Spent all day here during finals week.`, "https://images.squarespace-cdn.com/content/v1/5f45e76993895d07b9b1a2f3/1622930577276-YD1KYOMMQTBZRYD8EJSK/Ministry-2.jpg");
-            }});
-        L.marker([34.023912, -118.283696])
-            .addTo(map)
-            .on('click', function () {{
-                showInfo("Drip Daddy", "Village Crosswalk, No address.", `My favorite place to grab a coffee on the way to class.`, "https://images.squarespace-cdn.com/content/v1/5f45e76993895d07b9b1a2f3/1622930423857-04M7LRM36LLV7JJ28R7M/DripDaddy1.jpg");
-            }});
-        L.marker([34.026869, -118.278828])
-            .addTo(map)
-            .on('click', function () {{
-                showInfo("Alpha Phi", "643 W 28th St, Los Angeles, CA 90007", `Where I go for lunch and dinner most weekdays.`, "https://static.wixstatic.com/media/2010a3_81730bdad28e4c4c8dd3e0c43a28529f~mv2.jpg/v1/fill/w_640,h_427,al_c,q_80,usm_0.66_1.00_0.01/2010a3_81730bdad28e4c4c8dd3e0c43a28529f~mv2.jpg");
-            }});
-        L.marker([34.0333, -118.2833])
-            .addTo(map)
-            .on('click', function () {{
-                showInfo("Bacari W Adams", "2308 S Union Ave, Los Angeles, CA 90007", `My 19th birthday dinner, where I took my parents during their visit.`, "https://s3-media0.fl.yelpcdn.com/bphoto/ZfI0VxNc2kVnSLCXD9J4Fw/o.jpg");
-            }});
-        L.marker([34.02114, -118.282328])
-            .addTo(map)
-            .on('click', function () {{
-                showInfo("Everybody's Kitchen", "642 W 34th St, Los Angeles, CA 90007", `The dining hall I went to every day of my freshman year.`, "https://hospitality.usc.edu/wp-content/uploads/2022/07/EVKDiningHall.jpg");
-            }});
-        L.marker([34.030764, -118.291643])
-            .addTo(map)
-            .on('click', function () {{
-                showInfo("Manas Indian Cuisine", "2823 S Vermont Ave, Los Angeles, CA 90007", `My favorite spot to eat when I crave Indian food.`, "https://fastly.4sqi.net/img/general/600x600/1004017_x7LQ_V-W2sklAtKh3IQAcXVGMeAe8-Lyq4MIKMoV6kg.jpg");
-            }});
-        L.marker([34.027113, -118.278145])
-            .addTo(map)
-            .on('click', function () {{
-                showInfo("Starbucks on 28th", "2735 S Figueroa St, Los Angeles, CA 90007", `A spot where I’ve had dozens of late-night study sessions.`, "https://content-prod-live.cert.starbucks.com/binary/v2/asset/137-68401.jpg");
-            }});
-        L.marker([34.020763, -118.284239])
-            .addTo(map)
-            .on('click', function () {{
-                showInfo("Yogurtland", "3335 S Figueroa St Unit K, Los Angeles, CA 90007", `Where I go for dessert after stressful exams.`, "https://s3-media0.fl.yelpcdn.com/bphoto/qK9n_mEka94CItAcVE7nQg/o.jpg");
-            }});
-        L.marker([34.020899, -118.285527])
-            .addTo(map)
-            .on('click', function () {{
-                showInfo("Literatea", "3550 Trousdale Pkwy, Los Angeles, CA 90089", `My favorite tea and pastry spot tucked inside the library.`, "https://dailytrojan.com/wp-content/uploads/2016/01/IMG_2969.jpg");
-            }});
-        L.marker([34.025147, -118.284941])
-            .addTo(map)
-            .on('click', function () {{
-                showInfo("Rock and Reilly's", "3201 S Hoover St, Los Angeles, CA 90089", `Where we celebrated finishing finals with friends.`, "https://s3-media0.fl.yelpcdn.com/bphoto/iTwIHa7W0FgsfUu_f9AJwQ/o.jpg");
-            }});
-    </script>
+    locations.forEach(function(loc) {
+      L.marker([loc.lat, loc.lng]).addTo(map)
+        .bindPopup(`<strong>${loc.name}</strong><br>${loc.address}<br><em>${loc.memory}</em>`);
+    });
+  </script>
 </body>
 </html>
