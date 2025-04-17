@@ -8,10 +8,34 @@
   <style>
     #map { height: 100vh; }
     .leaflet-popup-content { font-size: 14px; }
+    .map-title {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 10px 15px;
+      border-radius: 10px;
+      font-family: sans-serif;
+      z-index: 1000;
+      max-width: 250px;
+    }
+    .map-title h1 {
+      margin: 0;
+      font-size: 18px;
+    }
+    .map-title p {
+      margin: 5px 0 0;
+      font-size: 14px;
+      color: #333;
+    }
   </style>
 </head>
 <body>
   <div id="map"></div>
+  <div class="map-title">
+    <h1>USC through my eyes and stomach.</h1>
+    <p>My college experience through the places that have shaped it.</p>
+  </div>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
     var map = L.map('map').setView([34.0259, -118.2854], 15);
