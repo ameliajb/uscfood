@@ -8,13 +8,6 @@
   <style>
     #map { height: 100vh; }
     .leaflet-popup-content { font-size: 14px; }
-    .heart-icon {
-      background-image: url('https://cdn-icons-png.flaticon.com/512/833/833472.png');
-      background-size: cover;
-      width: 32px;
-      height: 32px;
-      display: block;
-    }
   </style>
 </head>
 <body>
@@ -28,12 +21,12 @@
     }).addTo(map);
 
     var heartIcon = L.icon({
-      iconUrl: 'https://cdn-icons-png.flaticon.com/512/833/833472.png',
+      iconUrl: 'https://cdn-icons-png.flaticon.com/128/833/833472.png',
       iconSize: [32, 32],
       iconAnchor: [16, 32],
       popupAnchor: [0, -32]
     });
-
+    
     var locations = [
       {
         name: "Ministry of Coffee",
